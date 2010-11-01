@@ -153,6 +153,11 @@ class OSG_FILEIO_DLLMAPPING ColladaAnimation : public ColladaInstantiableElement
 	void extractIndex();
 	bool isTransformAttribute(daeElement * target);
 
+	void buildSingleAxisKeyframes( KeyframeVectorSequenceVec3f * kfSeq, Vec3f defaultValue, UInt32 animatedAxis, 
+							   domListOfFloats animVals, std::vector<Real32> timeKeys);
+
+	Vec3f getVec3fAnimTargetValue();
+
 	// members
 	std::string _animationTargetName;
 	KeyframeSequenceUnrecPtr _keyframeSequence;
